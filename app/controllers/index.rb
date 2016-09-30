@@ -5,7 +5,7 @@ post '/' do
   username = request["user_name"] # the username of the author
 
   # security token
-  return 401 unless request["token"] == ENV["SLACK_TOKEN"] || request["token"] == ENV["SLACK_TOKEN_WOLVES"]
+  return 401 unless (request["token"] == ENV["SLACK_TOKEN"] || request["token"] == ENV["SLACK_TOKEN_WOLVES"])
   # it won't listen to itself
   return 200 if username == "slackbot" # or whatever your bot is named
 
