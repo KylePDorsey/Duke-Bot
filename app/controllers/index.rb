@@ -1,7 +1,7 @@
 # route
 post '/' do
 
-  message = request["text"] # the text in the message
+  message = request["text"].downcase # the text in the message
   username = request["user_name"] # the username of the author
 
   # security token
