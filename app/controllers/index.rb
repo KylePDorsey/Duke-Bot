@@ -22,11 +22,11 @@ post '/' do
       return JSON.dump({
         "text" => Faker::PhoneNumber.phone_number
       })
+    elsif
+      return JSON.dump({
+        "text" => "Did someone say my name?"
+      })
     end
-  else
-    return JSON.dump({
-      "text" => "Did someone say my name?"
-    })
   end
 
 
