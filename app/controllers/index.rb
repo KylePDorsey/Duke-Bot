@@ -9,7 +9,7 @@ post '/' do
   # it won't listen to itself
   return 200 if username == "slackbot" # or whatever your bot is named
 
-  if message.includes? "duke"
+  if message.include? "duke"
     # sleep(2) optional
     return JSON.dump({
       "text" => "Did someone say my name?"
