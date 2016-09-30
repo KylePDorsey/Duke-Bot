@@ -10,13 +10,17 @@ post '/' do
   return 200 if username == "slackbot" # or whatever your bot is named
 
   if message.include? "duke"
-    if message.include? "joke"
+    if message.include? "feeling"
       return JSON.dump({
         "text" => Faker::SlackEmoji.objects_and_symbols
       })
-    else message.include? "hack"
+    elsif message.include? "hack"
       return JSON.dump({
         "text" => Faker::Hacker.say_something_smart
+      })
+    elsif message.include? "digits"
+      return JSON.dump({
+        "text" => Faker::PhoneNumber.phone_number
       })
     end
   else
