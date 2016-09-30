@@ -22,7 +22,7 @@ post '/' do
       return JSON.dump({
         "text" => Faker::PhoneNumber.phone_number
       })
-    elsif
+    else
       return JSON.dump({
         "text" => "Did someone say my name?"
       })
